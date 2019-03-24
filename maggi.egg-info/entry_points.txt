@@ -1,0 +1,3 @@
+[console_scripts]
+maggi = maggi.__main__:main
+

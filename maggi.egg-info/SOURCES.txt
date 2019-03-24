@@ -1,0 +1,9 @@
+README.txt
+setup.py
+maggi/__init__.py
+maggi/__main__.py
+maggi.egg-info/PKG-INFO
+maggi.egg-info/SOURCES.txt
+maggi.egg-info/dependency_links.txt
+maggi.egg-info/entry_points.txt
+maggi.egg-info/top_level.txt

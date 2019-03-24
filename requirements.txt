@@ -1,0 +1,4 @@
+Click==7.0
+pyfiglet==0.8.post1
+inquirer==2.5.1
+requests==2.21.0
