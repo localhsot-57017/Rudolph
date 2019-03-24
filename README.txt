@@ -1,6 +1,6 @@
 MAGGI
 
-MAGGi is CLI app for creating ec2 like environments for deploying
+MAGGi a is CLI app for creating ec2 like environments for deploying
 and testing your apps it is pre-baked with CI/CD support and runs on
 kubernetes and docker by default. It has its own web based terminal
 and does not require external dependencies.
@@ -33,7 +33,7 @@ TODO
     - penetration tests to be added
     - support dynamic ip change
     - create and support load testing env
-    - S3 server clone and bidirectional FTP server
+    - Streaming server and FTP server
 
 CONTACT 
     mail ( sarkar.anurag@outlook.com )
