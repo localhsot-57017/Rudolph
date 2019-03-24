@@ -33,6 +33,7 @@ TODO
     - penetration tests to be added
     - support dynamic ip change
     - create and support load testing env
+    - S3 server clone and bidirectional FTP server
 
 CONTACT 
-    mail(sarkar.anurag@outlook.com)
+    mail ( sarkar.anurag@outlook.com )
