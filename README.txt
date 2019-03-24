@@ -24,7 +24,8 @@ To use maggi :
                         testing load or scaling.)
 
 
-
+IN CURRENT TEST RELEASE 
+To Install - pip install -i https://test.pypi.org/simple/ maggi
 
 
 TODO
@@ -33,3 +34,5 @@ TODO
     - support dynamic ip change
     - create and support load testing env
 
+CONTACT 
+    mail(sarkar.anurag@outlook.com)
