@@ -29,7 +29,7 @@ To Install - pip install -i https://test.pypi.org/simple/ maggi
 
 
 TODO
-    - create jenkins pipeline and git hooks
+    - allow custom jenkins pipeline 
     - penetration tests to be added
     - support dynamic ip change
     - create and support load testing env
