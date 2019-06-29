@@ -20,9 +20,9 @@ def createbox(os, cpu, memory, port):
         print("access port : ", "http://localhost" + accessport[1])
         print(response["containerId"])
         return response["containerId"], "http://localhost" + accessport[1]
-    except:
-        print("something happend ")
-        return "roll back"
+    except Exception:
+        print("something happend ", Exception)
+        return "roll back" # TODO roll back
 
 
 

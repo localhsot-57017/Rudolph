@@ -5,17 +5,20 @@ import click
 import pyfiglet
 import inquirer
 
-from maggi.utils.connector import dockin
-from maggi.utils.create import createbox
-from maggi.utils.delete import clean
-from maggi.utils.instabox import buildlinux
-from maggi.utils.prune import prune
+from utils.connector import dockin
+from utils.create import createbox
+from utils.delete import clean
+from utils.instabox import buildlinux
+from utils.prune import prune
+from utils.move import copy
 
+import locale
+locale.setlocale(locale.LC_ALL, str('en_US.UTF-8'))
 
 @click.command()
 @click.option('--create',
               is_flag=True,
-              help='setup a VM for running deployment tools/tests very similar to an EC2 instance',)
+              help='setup a VM for running deployment tools/tests very similar to an cloud instance',)
 @click.option('--performance',
               help = "see load on VM instances " )
 @click.option('--purge',
@@ -45,18 +48,27 @@ def main(create, performance, purge, delete):
                           ),
         ]
         os = inquirer.prompt(available_os)['os']
-        cpu = click.prompt("please enter number of cpu core to dedicate :")
-        mem = click.prompt("plese enter the memory in MB : ", default="512", confirmation_prompt=True)
-        port = click.prompt("please enter the port to access : ", default="15178", confirmation_prompt=True)
+        cpu = click.prompt("Please enter number of cpu core to dedicate : ", default="2")
+        print("✅")
+        mem = click.prompt("Please enter the memory in MB : ", default="512", confirmation_prompt=True)
+        print("✅")
+        port = click.prompt("Please enter the port to access : ", default="15178", confirmation_prompt=True)
+        print("✅")
+        directory = click.prompt("Please enter the project file directory")
+        print("✅")
         print(os, cpu, mem, port)
         buildlinux(path)
+        print("✅")
         id, link = createbox(os, cpu, mem, port)
         dockin(id)
+        copy(directory, link + ":")
+        print("✅")
         click.launch(link)
 
     if purge:
         prune()
         print("cleaning all instant linux machines ")
+        print("😴")
 
     if delete:
         vals = click.prompt("delete container [Y/n]", confirmation_prompt=True)
