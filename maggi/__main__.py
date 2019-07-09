@@ -49,7 +49,7 @@ def main(create, performance, purge, delete):
         ]
         os = inquirer.prompt(available_os)['os']
         cpu = click.prompt("Please enter number of cpu core to dedicate : ", default="2")
-        print("✅")
+        print("👌🏼")
         mem = click.prompt("Please enter the memory in MB : ", default="512", confirmation_prompt=True)
         print("✅")
         port = click.prompt("Please enter the port to access : ", default="15178", confirmation_prompt=True)
@@ -61,7 +61,7 @@ def main(create, performance, purge, delete):
         print("✅")
         id, link = createbox(os, cpu, mem, port)
         dockin(id)
-        copy(directory, link + ":")
+        copy(directory, id)
         print("✅")
         click.launch(link)
 

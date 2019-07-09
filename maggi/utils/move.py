@@ -2,9 +2,12 @@ import os
 import subprocess
 
 
-def copy(directory_path, instantbox_url_path_source):
+def copy(directory_path, docker_id):
     print("copying data to VM")
-    subprocess.run(['scp', '-v', directory_path , instantbox_url_path_source])
-
+    docker_absolute_path = docker_id + ":."
+    subprocess.run(['docker', 'cp', directory_path , docker_absolute_path])
 
 # copy("/Users/oyo/Desktop/a.cpp", "anurag.sarkar1@10.15.14.22:")
+
+
+## TODO : instruction.yml -==== build script
