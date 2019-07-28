@@ -3,8 +3,7 @@
 
 import click
 import pyfiglet
-#import inquirer
-import locale
+import inquirer
 
 from utils.connector import dockin
 from utils.create import createbox
@@ -13,8 +12,7 @@ from utils.instabox import buildlinux
 from utils.prune import prune
 from utils.move import copy
 
-from docopt import docopt
-
+import locale
 locale.setlocale(locale.LC_ALL, str('en_US.UTF-8'))
 
 @click.command()

@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  server:
+    image: instantbox/instantbox:latest
+    container_name: instantbox_server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - SERVERURL=
+    networks:
+      - instantbox_net
+
+  frontend:
+    image: instantbox/instantbox-frontend:latest
+    container_name: instantbox_frontend
+    links:
+      - server
+    ports:
+      - 8888:80
+    networks:
+      - instantbox_net
+
+  cron:
+    image: instantbox/cron:latest
+    container_name: instantbox_cron
+    links:
+      - frontend
+    environment:
+      - CRON_STRINGS=* * * * * wget -qO /dev/null http://frontend/api/v2/superinspire/prune
+    networks:
+      - instantbox_net
+
+networks:
+  instantbox_net:
