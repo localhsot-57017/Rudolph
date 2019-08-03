@@ -1,5 +1,6 @@
 import requests
 import json
+import traceback
 
 def createbox(os, cpu, memory, port):
 
@@ -11,6 +12,7 @@ def createbox(os, cpu, memory, port):
         'cache-control': "no-cache"}
     try:
         response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+        print(response)
         response = json.loads(response.text)
         accessport = str(response["shareUrl"]).split("://")
         print(accessport)
@@ -21,9 +23,9 @@ def createbox(os, cpu, memory, port):
         print(response["containerId"])
         return response["containerId"], "http://localhost" + accessport[1]
     except Exception:
-        print("something happend ", Exception)
-        return "roll back" # TODO roll back
-
+        print("something happend ", traceback.print_exc())
+        # return "roll back" # TODO roll back
+        return None, None
 
 
 

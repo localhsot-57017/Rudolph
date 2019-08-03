@@ -10,7 +10,7 @@ from utils.create import createbox
 from utils.delete import clean
 from utils.instabox import buildlinux
 from utils.prune import prune
-from utils.move import copy
+from utils.move import copy, start
 
 import locale
 locale.setlocale(locale.LC_ALL, str('en_US.UTF-8'))
@@ -49,19 +49,34 @@ def main(create, performance, purge, delete):
         ]
         os = inquirer.prompt(available_os)['os']
         cpu = click.prompt("Please enter number of cpu core to dedicate : ", default="2")
-        print("👌🏼")
+        print("✅")
         mem = click.prompt("Please enter the memory in MB : ", default="512", confirmation_prompt=True)
         print("✅")
         port = click.prompt("Please enter the port to access : ", default="15178", confirmation_prompt=True)
         print("✅")
         directory = click.prompt("Please enter the project file directory")
         print("✅")
+        file2run = click.prompt("Please enter the main file to run")
+        print("✅")
         print(os, cpu, mem, port)
+        available_backend_framework = [
+            inquirer.List('framework',
+                          message="What backend framework do you need?",
+                          choices=['java:spring-boot',
+                                   'python3:Flask',
+                                   'python3:Django',
+                                   'python2:Flask',
+                                   'python2:Django',
+                                   'Ruby:Rails'],
+                          ),
+        ]
+        framework = inquirer.prompt(available_backend_framework)['framework']
         buildlinux(path)
         print("✅")
         id, link = createbox(os, cpu, mem, port)
-        dockin(id)
+        dockin(id, framework)
         copy(directory, id)
+        start(id, directory, file2run, framework)
         print("✅")
         click.launch(link)
 
