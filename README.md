@@ -1,4 +1,4 @@
-MAGGI
+# MAGGI
 
 MAGGi a is CLI app for creating ec2 like environments for deploying
 and testing your apps it is pre-baked with CI/CD support and runs on
