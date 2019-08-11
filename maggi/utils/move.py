@@ -2,9 +2,24 @@ import os
 import subprocess
 
 
-def copy(directory_path, instantbox_url_path_source):
+def copy(directory_path, docker_id):
     print("copying data to VM")
-    subprocess.run(['scp', '-v', directory_path , instantbox_url_path_source])
+    docker_absolute_path = docker_id + ":."
+    subprocess.run(['docker', 'cp', directory_path , docker_absolute_path])
+
+def start(containerid,directory,file2run,proj_choice):
+    file = directory.split('/')[-1]
+    print(file)
+    subprocess.run(["docker","exec","-ti",containerid,"-w",file])
+    if proj_choice == 1:
+        subprocess.run(["docker","exec","-ti",containerid,"mvn","spring-boot:run"])
+    elif proj_choice == 2:
+        subprocess.run(["docker","exec","-ti",containerid,"pip3","install","-r","requirements.txt"])
+        subprocess.run(["docker","exec","-ti",containerid,"python3",file2run])
+    elif proj_choice == 3:
+        subprocess.run(["docker","exec","-ti",containerid,"pip","install","-r","requirements.txt"])
+        subprocess.run(["docker","exec","-ti",containerid,"python",file2run])
+        
 
 
 # copy("/Users/oyo/Desktop/a.cpp", "anurag.sarkar1@10.15.14.22:")

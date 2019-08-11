@@ -5,6 +5,7 @@ from utils.prune import prune
 from utils.create import createbox
 from utils.connector import dockin
 from utils.instabox import buildlinux
+from utils.move import copy,start
 
 import locale
 locale.setlocale(locale.LC_ALL, str('en_US.UTF-8'))
@@ -64,6 +65,8 @@ def main():
             proj_choice = click.prompt("""
             Select the type of project  ==> 
             1. Spring-Boot
+            2. Flask (Python3)
+            3. Flask (Python2)
             """, default =1)
             path = click.prompt("Please enter where the base directory is to be installed ")
             print("✅")
@@ -75,10 +78,13 @@ def main():
             print("✅")
             directory = click.prompt("Enter the project directory ")
             print("✅")
+            file2run = click.prompt("Enter the main file to run")
+            print("✅")
             print(os,cpu,mem,port)
             buildlinux(path)
-            id, link = createbox(os, cpu, mem, port)
+            id, link = createbox(os,cpu,mem,port)
             dockin(id,directory,proj_choice)
+            start(id,directory,file2run,proj_choice)
             print("The id created = " + id)
             #copy(directory, link + ":")
             print("✅")

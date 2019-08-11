@@ -17,8 +17,14 @@ def dockin(containerid,directory,proj_choice):
                     "bamboo-cont.sh"])
     if proj_choice == 1:
         subprocess.run(["docker","exec","-ti", containerid, "curl","-O",
-                    "https://gist.githubusercontent.com/redhood-97/daad05a7c0d51dfdc5bb383c24ae7d63/raw/02d484a79652396e12b4d502e047f94a0c5aeae4/docker_spring_env.sh"])
+                    "https://gist.githubusercontent.com/redhood-97/daad05a7c0d51dfdc5bb383c24ae7d63/raw/0e499c9739ef478c9ab71b59758c5d558b091aac/docker_spring_env.sh"])
         subprocess.run(["docker", "exec", "-ti", containerid, "sh", "docker_spring_env.sh"])
+    elif proj_choice == 2:
+        subprocess.run(["docker","exec","-ti",containerid,"pip3","install","flask"])
+    elif proj_choice == 3:
+        subprocess.run(["docker","exec","-ti",containerid,"apt","install","python"])
+        subprocess.run(["docker","exec","-ti",containerid,"apt","install","python-pip"])
+        subprocess.run(["docker","exec","-ti",containerid,"pip","install","flask"])
     print(u'\u2713',"Tranferring project folder to the root dir of VM....")
     subprocess.run(["docker", "cp", "-a", directory, containerid + ":/"])
 
