@@ -1,5 +1,12 @@
 # Rudolph
 
+
+[![Generic badge](https://img.shields.io/badge/CLOUD-READY-GREEN.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/TEST-READY-GREEN.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/LINUX-ONLY-GREEN.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/CROSS_PLATFORM-READY-GREEN.svg)](https://shields.io/)
+
+
 <b>Rudolph</b> a is CLI app for creating ec2 like environments for deploying
 and testing your apps it is pre-baked with CI/CD support and runs on
 kubernetes and docker by default. It has its own web based terminal
