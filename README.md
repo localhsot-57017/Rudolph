@@ -25,33 +25,26 @@ and does not require external dependencies.
 
 ## Options for Operating Systems in the container
 
-<ul>
-    <li> Ubuntu 14.04 </li>
-    <li> Ubuntu 16.04 </li>
-    <li> Ubuntu 18.04 </li>
-    <li> Ubuntu 19.04 </li>
-    <li> centOS 6.10 </li>
-    <li> centOS 7 </li>
-    <li> Debian Jessie </li>
-    <li> Debian Stretch </li>
-</ul>
+
+- Ubuntu 14.04 
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Ubuntu 19.04
+- centOS 6.10
+- centOS 7
+- Debian Jessie
+- Debian Stretch
+
 
 ## Options for frameworks
-<ul>
-    <li> Spring-Boot </li>
-    <li> Flask (Python 2) </li>
-    <li> Flask (Python 3) </li>
-</ul>
-    
 
-## IN CURRENT TEST RELEASE 
-
-To Install - pip install -i https://test.pypi.org/simple/ maggi
+- Spring-boot
+- Flask-App
+- Django
 
 
 ## TODO
     - allow custom jenkins pipeline 
-    - penetration tests to be added
     - support dynamic ip change
     - create and support load testing env
     - Streaming server and FTP server
