@@ -1,11 +1,18 @@
-MAGGI
+# Rudolph
 
-MAGGi a is CLI app for creating ec2 like environments for deploying
+
+[![Generic badge](https://img.shields.io/badge/CLOUD-READY-GREEN.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/TEST-READY-GREEN.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/LINUX-ONLY-GREEN.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/CROSS_PLATFORM-READY-GREEN.svg)](https://shields.io/)
+
+
+<b>Rudolph</b> a is CLI app for creating ec2 like environments for deploying
 and testing your apps it is pre-baked with CI/CD support and runs on
 kubernetes and docker by default. It has its own web based terminal
 and does not require external dependencies.
 
-To use maggi :
+## Basic instructions :
 
 
 
@@ -23,17 +30,32 @@ To use maggi :
     --performance [VM]  shows system utility of vm (can be used while
                         testing load or scaling.)
 
-
-IN CURRENT TEST RELEASE 
-To Install - pip install -i https://test.pypi.org/simple/ maggi
+## Options for Operating Systems in the container
 
 
-TODO
+- Ubuntu 14.04 
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Ubuntu 19.04
+- centOS 6.10
+- centOS 7
+- Debian Jessie
+- Debian Stretch
+
+
+## Options for frameworks
+
+- Spring-boot
+- Flask-App
+- Django
+
+
+## TODO
     - allow custom jenkins pipeline 
-    - penetration tests to be added
     - support dynamic ip change
     - create and support load testing env
     - Streaming server and FTP server
 
-CONTACT 
+## CONTACT 
     mail ( sarkar.anurag@outlook.com )
+    mail ( anishksaha1997@gmail.com )
