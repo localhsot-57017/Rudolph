@@ -9,7 +9,7 @@
 
 <p> Moreover, it comes with it's own web based terminal which you can access from your browser using the container id. It also comes with a built-in command-line support and does not require any external dependencies. </p>
 <p> This tool is extremely useful for testing your application in a separate environment having your own preferred OS distribution along with the relevant list of dependencies. Once, you're happy with the way how it works, you can easily deploy the container anywhere without much hassle.</p>
-<br>
+<p>We are maintaining two separate branches for macOS and Windows respectively. Other than that, the general instructions for making it work are the same for both.</p>
 
 ## Basic instructions :
 
