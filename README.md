@@ -11,7 +11,7 @@
 <p> This tool is extremely useful for testing your application in a separate environment having your own preferred OS distribution along with the relevant list of dependencies. Once, you're happy with the way how it works, you can easily deploy the container anywhere without much hassle.</p>
 <p>We are maintaining two separate branches for macOS and Windows respectively. Other than that, the general instructions for making it work are the same for both.</p>
 
-## Basic instructions :
+## The magic words
 
 
 
@@ -28,9 +28,12 @@
 
     --performance [VM]  shows system utility of vm (can be used while
                         testing load or scaling.)
+                        
+## Here's how to roll....
 
-## Options for Operating Systems in the container
+![](/assets/xyz.gif)
 
+## Handpick your OS
 
 - Ubuntu 14.04 
 - Ubuntu 16.04
@@ -42,7 +45,7 @@
 - Debian Stretch
 
 
-## Options for frameworks
+## Framework support
 
 - Spring-boot
 - Flask-App
@@ -55,6 +58,6 @@
     - create and support load testing env
     - Streaming server and FTP server
 
-## CONTACT 
+## Contact 
     mail ( sarkar.anurag@outlook.com )
     mail ( anishksaha1997@gmail.com )
